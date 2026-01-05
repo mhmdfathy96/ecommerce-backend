@@ -1,4 +1,4 @@
-package org.mindtocode.springdatajpa.model;
+package org.mindtocode.ecommercebackend.model;
 
 import java.util.Date;
 import java.util.List;

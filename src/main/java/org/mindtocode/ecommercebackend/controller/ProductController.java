@@ -1,14 +1,14 @@
-package org.mindtocode.springdatajpa.controller;
+package org.mindtocode.ecommercebackend.controller;
 
 import java.io.IOException;
 
-import org.mindtocode.springdatajpa.model.Product;
+import org.mindtocode.ecommercebackend.model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.web.PagedModel;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import org.mindtocode.springdatajpa.service.ProductService;
+import org.mindtocode.ecommercebackend.service.ProductService;
 
 @RestController
 @RequestMapping("api/")

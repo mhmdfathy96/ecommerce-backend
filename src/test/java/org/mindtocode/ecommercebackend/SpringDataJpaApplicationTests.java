@@ -1,4 +1,4 @@
-package org.mindtocode.springdatajpa;
+package org.mindtocode.ecommercebackend;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,4 +1,4 @@
-package org.mindtocode.springdatajpa.exceptions;
+package org.mindtocode.ecommercebackend.exceptions;
 
 public class ProductOutOfStockException extends RuntimeException {
     public ProductOutOfStockException(String message) {

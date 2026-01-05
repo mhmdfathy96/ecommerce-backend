@@ -1,4 +1,4 @@
-package org.mindtocode.springdatajpa.model.dto;
+package org.mindtocode.ecommercebackend.model.dto;
 
 import java.time.LocalDateTime;
 

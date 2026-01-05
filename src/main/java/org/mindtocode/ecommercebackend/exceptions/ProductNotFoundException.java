@@ -1,8 +1,8 @@
-package org.mindtocode.springdatajpa.exceptions;
+package org.mindtocode.ecommercebackend.exceptions;
 
 public class ProductNotFoundException extends RuntimeException {
     public ProductNotFoundException(String message) {
-        super(message);   
+        super(message);
     }
 
     public ProductNotFoundException(String message, Throwable cause) {

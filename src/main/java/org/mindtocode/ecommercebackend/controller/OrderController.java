@@ -1,8 +1,8 @@
-package org.mindtocode.springdatajpa.controller;
+package org.mindtocode.ecommercebackend.controller;
 
-import org.mindtocode.springdatajpa.model.dto.OrderRequest;
-import org.mindtocode.springdatajpa.model.dto.OrderResponse;
-import org.mindtocode.springdatajpa.service.OrderService;
+import org.mindtocode.ecommercebackend.model.dto.OrderRequest;
+import org.mindtocode.ecommercebackend.model.dto.OrderResponse;
+import org.mindtocode.ecommercebackend.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.web.PagedModel;
 import org.springframework.http.ResponseEntity;

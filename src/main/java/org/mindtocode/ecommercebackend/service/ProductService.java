@@ -1,15 +1,15 @@
-package org.mindtocode.springdatajpa.service;
+package org.mindtocode.ecommercebackend.service;
 
 import java.io.IOException;
 
-import org.mindtocode.springdatajpa.model.Product;
+import org.mindtocode.ecommercebackend.model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PagedModel;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-import org.mindtocode.springdatajpa.repo.ProductRepo;
+import org.mindtocode.ecommercebackend.repo.ProductRepo;
 
 @Service
 public class ProductService {

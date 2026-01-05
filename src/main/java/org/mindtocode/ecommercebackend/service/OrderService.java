@@ -1,21 +1,21 @@
-package org.mindtocode.springdatajpa.service;
+package org.mindtocode.ecommercebackend.service;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-import org.mindtocode.springdatajpa.exceptions.ProductNotFoundException;
-import org.mindtocode.springdatajpa.exceptions.ProductOutOfStockException;
-import org.mindtocode.springdatajpa.model.Order;
-import org.mindtocode.springdatajpa.model.OrderItem;
-import org.mindtocode.springdatajpa.model.Product;
-import org.mindtocode.springdatajpa.model.dto.OrderItemRequest;
-import org.mindtocode.springdatajpa.model.dto.OrderItemResponse;
-import org.mindtocode.springdatajpa.model.dto.OrderRequest;
-import org.mindtocode.springdatajpa.model.dto.OrderResponse;
-import org.mindtocode.springdatajpa.repo.OrderRepo;
-import org.mindtocode.springdatajpa.repo.ProductRepo;
+import org.mindtocode.ecommercebackend.exceptions.ProductNotFoundException;
+import org.mindtocode.ecommercebackend.exceptions.ProductOutOfStockException;
+import org.mindtocode.ecommercebackend.model.Order;
+import org.mindtocode.ecommercebackend.model.OrderItem;
+import org.mindtocode.ecommercebackend.model.Product;
+import org.mindtocode.ecommercebackend.model.dto.OrderItemRequest;
+import org.mindtocode.ecommercebackend.model.dto.OrderItemResponse;
+import org.mindtocode.ecommercebackend.model.dto.OrderRequest;
+import org.mindtocode.ecommercebackend.model.dto.OrderResponse;
+import org.mindtocode.ecommercebackend.repo.OrderRepo;
+import org.mindtocode.ecommercebackend.repo.ProductRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

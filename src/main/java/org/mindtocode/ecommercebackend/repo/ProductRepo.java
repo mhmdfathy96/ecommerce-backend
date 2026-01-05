@@ -1,6 +1,6 @@
-package org.mindtocode.springdatajpa.repo;
+package org.mindtocode.ecommercebackend.repo;
 
-import org.mindtocode.springdatajpa.model.Product;
+import org.mindtocode.ecommercebackend.model.Product;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
