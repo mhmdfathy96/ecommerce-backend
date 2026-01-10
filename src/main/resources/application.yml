@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: ecommerce-backend
+
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE}
+    
+server:
+  servlet:
+    session:
+      cookie:
+        same-site: strict
+
+google:
+  oauth:
+    auth-url: https://accounts.google.com/o/oauth2/v2/auth
+    token-url: https://oauth2.googleapis.com/token
+    user-info-url: https://www.googleapis.com/oauth2/v3/userinfo
+    callback-endpoint: /api/auth/oauth2/callback/google

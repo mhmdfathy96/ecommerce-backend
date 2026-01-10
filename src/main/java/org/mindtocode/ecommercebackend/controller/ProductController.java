@@ -6,6 +6,7 @@ import org.mindtocode.ecommercebackend.model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.web.PagedModel;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.mindtocode.ecommercebackend.service.ProductService;
@@ -19,6 +20,7 @@ public class ProductController {
     ProductService productService;
 
     @PostMapping("product")
+    @PreAuthorize("hasRole('ADMIN')")
     ResponseEntity<?> create(@RequestPart Product product, @RequestPart MultipartFile imageFile) {
         try {
             return ResponseEntity.ok(productService.create(product, imageFile));
@@ -40,6 +42,7 @@ public class ProductController {
     }
 
     @PutMapping("product")
+    @PreAuthorize("hasRole('ADMIN')")
     ResponseEntity<?> update(@RequestPart Product product, @RequestPart MultipartFile imageFile) {
         try {
             return ResponseEntity.ok(productService.update(product, imageFile));
@@ -49,6 +52,7 @@ public class ProductController {
     }
 
     @DeleteMapping("product/{productId}")
+    @PreAuthorize("hasRole('ADMIN')")
     String delete(@PathVariable int productId) {
         return productService.delete(productId);
     }

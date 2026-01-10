@@ -1,8 +1,10 @@
 package org.mindtocode.ecommercebackend.exceptions;
 
 import org.mindtocode.ecommercebackend.model.dto.ErrorResponse;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authorization.AuthorizationDeniedException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -67,6 +69,27 @@ public class GlobalExceptionHandler {
                 return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);
         }
 
+        @ExceptionHandler(DataIntegrityViolationException.class)
+        public ResponseEntity<ErrorResponse> handleDataIntegrityViolationException(DataIntegrityViolationException ex) {
+                String message = ex.getMessage();
+                String errorMessage = "A record with this information already exists";
+
+                // Check if it's a unique constraint violation (PostgreSQL specific)
+                if (message != null) {
+                        String lowerMessage = message.toLowerCase();
+                        if (lowerMessage.contains("unique") || lowerMessage.contains("duplicate")
+                                        || lowerMessage.contains("uk_username") || lowerMessage.contains("username")) {
+                                errorMessage = "Username already exists";
+                        }
+                }
+
+                ErrorResponse errorResponse = new ErrorResponse(
+                                errorMessage,
+                                "Data Integrity Violation",
+                                HttpStatus.CONFLICT.value());
+                return ResponseEntity.status(HttpStatus.CONFLICT).body(errorResponse);
+        }
+
         @ExceptionHandler(Exception.class)
         public ResponseEntity<ErrorResponse> handleGenericException(Exception ex) {
                 ErrorResponse errorResponse = new ErrorResponse(
@@ -74,5 +97,14 @@ public class GlobalExceptionHandler {
                                 "Internal Server Error",
                                 HttpStatus.INTERNAL_SERVER_ERROR.value());
                 return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorResponse);
+        }
+
+        @ExceptionHandler(AuthorizationDeniedException.class)
+        public ResponseEntity<ErrorResponse> handleAuthenticationException(AuthorizationDeniedException ex) {
+                ErrorResponse errorResponse = new ErrorResponse(
+                                ex.getMessage(),
+                                "Authentication Error",
+                                HttpStatus.UNAUTHORIZED.value());
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(errorResponse);
         }
 }
