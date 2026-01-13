@@ -1,6 +1,6 @@
 # ecommerce-backend
 
-A RESTful API application built with Spring Boot and Spring Data JPA for managing products and orders. This ecommerce backend demonstrates CRUD (Create, Read, Update, Delete) operations with pagination support using PostgreSQL as the database.
+A RESTful API application built with Spring Boot and Spring Data JPA for managing products and orders. This ecommerce backend demonstrates CRUD (Create, Read, Update, Delete) operations with pagination support using PostgreSQL as the database. Features JWT-based authentication with OAuth2 support (Google), user registration, login, and role-based access control.
 
 ## 🎨 Frontend Application
 

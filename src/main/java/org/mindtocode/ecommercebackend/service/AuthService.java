@@ -1,5 +1,6 @@
 package org.mindtocode.ecommercebackend.service;
 
+import org.mindtocode.ecommercebackend.model.OAuth2State;
 import org.mindtocode.ecommercebackend.model.RefreshToken;
 import org.mindtocode.ecommercebackend.model.User;
 import org.mindtocode.ecommercebackend.model.dto.OAuthUserInfo;

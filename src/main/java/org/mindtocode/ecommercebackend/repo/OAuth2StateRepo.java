@@ -2,7 +2,7 @@ package org.mindtocode.ecommercebackend.repo;
 
 import java.util.Optional;
 
-import org.mindtocode.ecommercebackend.service.OAuth2State;
+import org.mindtocode.ecommercebackend.model.OAuth2State;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

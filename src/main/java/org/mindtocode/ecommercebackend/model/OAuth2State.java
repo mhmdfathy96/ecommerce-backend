@@ -1,4 +1,4 @@
-package org.mindtocode.ecommercebackend.service;
+package org.mindtocode.ecommercebackend.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
